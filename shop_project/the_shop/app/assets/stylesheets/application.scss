@@ -1,0 +1,135 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
+@import url('https://fonts.googleapis.com/css?family=Muli|Source+Sans+Pro:200|Spectral+SC|Titillium+Web:300,400');
+
+
+/*font-family: 'Spectral SC', serif;
+font-family: 'Muli', sans-serif;
+font-family: 'Titillium Web', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+*/
+
+.cart-pic{
+	height: 5%;
+	width: 5%;
+}
+.cart{
+	text-align: right;
+}
+.thumb {
+	max-width:50%;
+  max-height:50%;
+}
+
+.storefront-pic{
+	max-width:70%;
+  max-height:70%;
+
+}
+
+.show-pic{
+	max-width:25%;
+  max-height:25%;
+}
+
+.center-it{
+	text-align: center;
+	height: 500px;
+	background: white;
+}
+
+nav {
+
+	font-family: 'Spectral SC', serif;
+	color: white;
+
+}
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:visited{
+	color: white;
+	text-decoration: none;
+
+}
+.nav-title{
+	font-size: 30px;
+}
+
+.storefront-title, .modal-title{
+	font-family: 'Spectral SC', serif;
+	text-align: center;
+}
+
+.navbar-default{
+
+	background: black;
+}
+
+.add-border{
+border-width: 3px;
+border-color: black;
+
+}
+.show-title{
+	font-family: 'Spectral SC', serif;
+	font-size: 35px;
+
+}
+
+
+.show-well{
+
+padding: 50px;	
+
+height: 300px;
+background: black;
+color: white;
+font-size: 20px;
+}
+
+.price-text{
+	font-family: 'Muli', sans-serif;
+}
+
+.desc-text{
+	font-family: 'Source Sans Pro', sans-serif;;
+}
+
+
+
+.brand-text{
+	font-size: 12px;
+
+}
+
+
+.break{
+	height: 3px;
+	background: white;
+	margin: 10px;
+}
+
+a, a:hover, a:visited {
+    color: #030a10;
+    text-decoration: none;
+}
+
+.notice {
+	color:red;
+	font-style: italic;
+}

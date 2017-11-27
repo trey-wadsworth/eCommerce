@@ -1,0 +1,52 @@
+<h1>Your Cart</h1>
+
+<p>Here are the items you've selected so far:</p>
+
+
+<div>
+	<% if @line_items.blank? %>
+		<h2> Your cart is empty!  Go grab some deals!</h2>
+		<p><%= link_to "Return to Shopping", root_path, class: 'btn btn-success' %></p>
+
+	<% else %>	
+		 <% @line_items.each do |line_item| %>
+
+  <div class="media" >
+  	<div class="media-left">
+	    <a href="#">
+	      <%= image_tag line_item.product.image, class: 'thumb' %>
+	    </a>
+	  </div>
+
+    <div class="media-body">
+	    <h4 class="media-heading"><%= line_item.product.name %></h4>
+	    <ul class="list-group">
+		    <li class="list-group-item">Price:<%= number_to_currency line_item.product.price %></li>
+		    <li class="list-group-item">Qty: <%= line_item.quantity %></li>
+		    <li class="list-group-item"><strong>Subtotal: <%= number_to_currency line_item.line_item_total %></strong></li>
+	      <li class="list-group-item">
+
+	       <%= form_tag edit_line_item_path do %>
+	        <%= hidden_field_tag :order_id, line_item.order_id %>
+	        <%= hidden_field_tag :product_id, line_item.product_id %>
+	        <%= number_field_tag :quantity, nil, min: 0, max: line_item.product.quantity, class: "form-control" %>
+	        <%= submit_tag "Edit Quantity", class: "btn btn-primary" %>
+	       <% end %> 
+	        <%= link_to "Delete From Cart", delete_line_item_path(product_id: line_item.product_id, order_id: line_item.order_id), class: "btn btn-danger" %>
+	      </li>
+	      
+		  </ul>  
+  </div>
+</div>
+
+<% end %>
+
+
+
+ <h4> Cart Total: <strong><%= number_to_currency @cart_total %></strong></h4>
+
+	<p><%= link_to "Proceed to Checkout?", checkout_path, class: 'btn btn-success'%></p>
+<% end %>	
+
+
+</div>
