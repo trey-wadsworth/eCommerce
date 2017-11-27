@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
  before_action :authenticate_user!
+ helper_method :current_order
 
   def all_users
   	
@@ -30,4 +31,11 @@ class AdminController < ApplicationController
     @user.destroy
     redirect_to all_users_pathr
   end
+
+  def current_order
+    if !session[:order_id].nil?
+      Order.find(session[:order_id])
+    else
+      Order.new
+    end
 end

@@ -1,0 +1,7 @@
+<h2>Thank you for your order, <%= @order.user.email %>!</h2>
+
+<p>
+  Order #<%= @order.id %> will be on its way soon!
+</p>
+
+<%= link_to "Want to shop some more?", root_path, class: 'btn btn-success' %>
